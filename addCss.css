@@ -1,0 +1,45 @@
+.font1 {
+    font-family: 'DFKai-sb';
+    /* 標楷體 */
+}
+
+.font2 {
+    font-family: 'Microsoft JhengHei';
+    /* 微軟正黑體 */
+}
+
+.font3 {
+    font-family: 'cursive';
+    /* 手寫體 */
+}
+
+.font4 {
+    font-family: 'fantasy';
+    /* 幻想體  */
+}
+
+/* .bgword{
+    border: 1px solid blue;
+    font-size: 60px;
+    background-image: url(https://thumb.photo-ac.com/84/8450674353664b0740cacabf28737137_t.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+.boxShadow {
+    box-shadow: 
+    0 2px 2px 0 rgb(0, 0, 0 / 14%)
+    0 3px 1px -2px rgb(0, 0, 0 / 20%)
+    0 1px 5px 0 rgb(0, 0, 0 / 12%);
+}
+
+.bg-img {
+    /* 背景圖片，需另外自定義圖片與大小位置 */
+    /* background-image: url(); */
+    padding-bottom: 40%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

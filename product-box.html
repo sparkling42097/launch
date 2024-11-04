@@ -19,28 +19,49 @@
     <link rel="stylesheet" href="./addCss.css">
 
     <style>
-    body {
-      padding-top: 70px;
-      /* 根據導覽列的高度來調整這個值 */
-      position: relative;
-      z-index: 0;
-    }
+        body {
+            padding-top: 200px;
+            /* 根據導覽列的高度來調整這個值 */
+            position: relative;
+            z-index: 0;
+        }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('./img/梨山山景.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      opacity: 0.5;
-      /* 設置背景圖片透明度 */
-      z-index: -1;
-    }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./img/梨山山景.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+            /* 設置背景圖片透明度 */
+            z-index: -1;
+        }
+
+        teadiv>img {
+            width: 270px;
+            height: auto;
+            border-radius: 10px;
+            padding-inline: 50px;
+        }
+
+        boxdiv>img {
+            width: 260px;
+            height: auto;
+            border-radius: 10px;
+            padding-inline: 35px;
+        }
+
+        namespan {
+            font-size: 28px;
+            font-style: italic;
+            text-decoration: underline;
+            text-decoration-color: #ffa44e;
+        }
     </style>
 </head>
 
@@ -51,149 +72,139 @@
         <div class="container-fluid">
             <a class="navbar-brand mx-2" href="./launch.html" style="color: black;">春風風茶</a>
             <a class="navbar-brand mx-2" href="./introduce.html" style="color: black;">關於我們</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
-                aria-label="Toggle navigation"></button>
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav mx-2">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">商品</a>
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="./product-cha.html" style="color: black;">茶葉</a></li>
-                            <li><a class="dropdown-item" href="./product-box.html" style="color: black;">禮盒</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand ms-2 me-auto" href="./product.html" style="color: black;">產品</a>
         </div>
     </nav>
-    <!-- 產品項目 -->
-    <div class="container mt-5">
-        <p class="row-title font1 rounded-pill shadow w-75 mx-auto opacity-75"
-            style="text-align: center;background: #9cffc3;font-size: 50px;color: rgb(255, 21, 91);">禮盒</p><br>
-        <div class="row">
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card">
-                    <img src="./img/高冷茶(禮盒).jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">高冷茶</h5>
-                        <p class="card-text">$600</p>
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary button-minus" type="button">-</button>
-                            <input type="text" class="form-control text-center quantity" value="1" readonly id="boxQuan1">
-                            <button class="btn btn-outline-secondary button-plus" type="button">+</button>
-                        </div>
-                        <button class="btn btn-primary mt-3" id="boxBtn1">加入購物車</button>
+
+    <section class="row">
+        <menu class="col-2 font1">
+            <h2>產品</h2>
+            <hr>
+            <h5><a href="./product.html">散包</a></h5>
+            <h5><a href="./product-box.html">禮盒</a></h5>
+        </menu>
+
+        <article class="col-8">
+            <div>
+                <h2 class="font1">散包</h2>
+            </div>
+            <hr>
+
+            <!-- productList2 -->
+            <div id="productList2" class="container bg-light font1" style="display: inline-flex;">
+                <!-- 高冷茶(禮盒) -->
+                <div class="product mx-3">
+                    <namespan>高冷茶(禮盒)</namespan>
+                    <boxdiv class="input-group">
+                        <img src="./img/高冷茶(禮盒).jpg">
+                    </boxdiv>
+                    <div class="input-group">
+                        <button class="button-minus">-</button>
+                        <input type="number" id="boxQuantity1" class="quantity" value="1" min="1">
+                        <button class="button-plus">+</button>
+                    </div>
+                    <div style="padding-inline: 80px;">
+                        <button class="add-to-cart" data-product="高冷茶(禮盒)" data-quantity="boxQuantity1">加入購物車</button>
+                    </div>
+                </div>
+                <!-- 凍頂烏龍茶(禮盒) -->
+                <div class="product mx-3">
+                    <namespan>凍頂烏龍茶(禮盒)</namespan>
+                    <boxdiv class="input-group">
+                        <img src="./img/凍頂烏龍茶(禮盒).jpg">
+                    </boxdiv>
+                    <div class="input-group">
+                        <button class="button-minus">-</button>
+                        <input type="number" id="boxQuantity2" class="quantity" value="1" min="1">
+                        <button class="button-plus">+</button>
+                    </div>
+                    <div style="padding-inline: 80px;">
+                        <button class="add-to-cart" data-product="凍頂烏龍茶(禮盒)" data-quantity="boxQuantity2">加入購物車</button>
+                    </div>
+                </div>
+                <!-- 阿里山茶(禮盒) -->
+                <div class="product mx-3">
+                    <namespan>阿里山茶(禮盒)</namespan>
+                    <boxdiv class="input-group">
+                        <img src="./img/阿里山茶(禮盒).jpg">
+                    </boxdiv>
+                    <div class="input-group">
+                        <button class="button-minus">-</button>
+                        <input type="number" id="boxQuantity3" class="quantity" value="1" min="1">
+                        <button class="button-plus">+</button>
+                    </div>
+                    <div style="padding-inline: 80px;">
+                        <button class="add-to-cart" data-product="阿里山茶(禮盒)" data-quantity="boxQuantity3">加入購物車</button>
+                    </div>
+                </div>
+                <!-- 高山茶(禮盒) -->
+                <div class="product mx-3">
+                    <namespan>高山茶(禮盒)</namespan>
+                    <boxdiv class="input-group">
+                        <img src="./img/高山茶(禮盒).jpg">
+                    </boxdiv>
+                    <div class="input-group">
+                        <button class="button-minus">-</button>
+                        <input type="number" id="boxQuantity4" class="quantity" value="1" min="1">
+                        <button class="button-plus">+</button>
+                    </div>
+                    <div style="padding-inline: 80px;">
+                        <button class="add-to-cart" data-product="高山茶(禮盒)" data-quantity="boxQuantity4">加入購物車</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card">
-                    <img src="./img/凍頂烏龍茶(禮盒).jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">凍頂烏龍茶</h5>
-                        <p class="card-text">$1000</p>
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary button-minus" type="button">-</button>
-                            <input type="text" class="form-control text-center quantity" value="1" readonly id="boxQuan2">
-                            <button class="btn btn-outline-secondary button-plus" type="button">+</button>
-                        </div>
-                        <button class="btn btn-primary mt-3" id="boxBtn2">加入購物車</button>
-                    </div>
-                </div>
             </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card">
-                    <img src="./img/阿里山茶(禮盒).jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">阿里山茶</h5>
-                        <p class="card-text">$1200</p>
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary button-minus" type="button">-</button>
-                            <input type="text" class="form-control text-center quantity" value="1" readonly id="boxQuan3">
-                            <button class="btn btn-outline-secondary button-plus" type="button">+</button>
-                        </div>
-                        <button class="btn btn-primary mt-3" id="boxBtn3">加入購物車</button>
-                    </div>
-                </div>
+        </article>
+    </section>
+
+    <!-- toast -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
+        <div id="cartToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">購物車</strong>
+                <small>加入成功</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-            <div class="col-12 col-md-3 mb-4">
-                <div class="card">
-                    <img src="./img/高山茶(禮盒).jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">高山茶</h5>
-                        <p class="card-text">$3600</p>
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary button-minus" type="button">-</button>
-                            <input type="text" class="form-control text-center quantity" value="1" readonly id="boxQuan4">
-                            <button class="btn btn-outline-secondary button-plus" type="button">+</button>
-                        </div>
-                        <button class="btn btn-primary mt-3" id="boxBtn4">加入購物車</button>
-                    </div>
-                </div>
-            </div>
+            <div class="toast-body" id="toastMessage"></div>
         </div>
     </div>
-<!-- toast加入購物車 -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
-    <div id="teaToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <strong class="me-auto">購物車</strong>
-        <small>加入成功</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body" id="toastShow"></div>
-    </div>
-  </div>
 
-  <script>
-    // 購物車加減功能
-    document.addEventListener('DOMContentLoaded', function () {
-      var minusButtons = document.querySelectorAll('.button-minus');
-      var plusButtons = document.querySelectorAll('.button-plus');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toastElement = document.getElementById('cartToast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toast = new bootstrap.Toast(toastElement);
 
-      minusButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-          var input = this.closest('.input-group').querySelector('.quantity');
-          var value = parseInt(input.value);
-          if (value > 1) {
-            input.value = value - 1;
-          }
+            // 加減功能
+            document.querySelectorAll('.button-minus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.nextElementSibling;
+                    const value = parseInt(input.value);
+                    if (value > 1) {
+                        input.value = value - 1;
+                    }
+                });
+            });
+
+            document.querySelectorAll('.button-plus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.previousElementSibling;
+                    input.value = parseInt(input.value) + 1;
+                });
+            });
+
+            // 加入購物車並顯示 Toast
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productName = button.getAttribute('data-product');
+                    const quantityInputId = button.getAttribute('data-quantity');
+                    const quantity = document.getElementById(quantityInputId).value;
+                    toastMessage.innerHTML = `${quantity} 包 ${productName}`;
+                    toast.show();
+                });
+            });
         });
-      });
-
-      plusButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-          var input = this.closest('.input-group').querySelector('.quantity');
-          var value = parseInt(input.value);
-          input.value = value + 1;
-        });
-      });
-    });
-
-    // toast加入購物車
-    document.getElementById("boxBtn1").addEventListener("click", () => {
-      document.getElementById("toastShow").innerHTML = document.getElementById("boxQuan1").value + "袋 高冷茶";
-      var toast = new bootstrap.Toast(document.getElementById("teaToast"));
-      toast.show();
-    });
-    document.getElementById("boxBtn2").addEventListener("click", () => {
-      document.getElementById("toastShow").innerHTML = document.getElementById("boxQuan2").value + "袋 凍頂烏龍茶";
-      var toast = new bootstrap.Toast(document.getElementById("teaToast"));
-      toast.show();
-    });
-    document.getElementById("boxBtn3").addEventListener("click", () => {
-      document.getElementById("toastShow").innerHTML = document.getElementById("boxQuan3").value + "袋 阿里山茶";
-      var toast = new bootstrap.Toast(document.getElementById("teaToast"));
-      toast.show();
-    });
-    document.getElementById("boxBtn4").addEventListener("click", () => {
-      document.getElementById("toastShow").innerHTML = document.getElementById("boxQuan4").value + "袋 高山茶";
-      var toast = new bootstrap.Toast(document.getElementById("teaToast"));
-      toast.show();
-    });
-  </script>
+    </script>
 </body>
 
 </html>
